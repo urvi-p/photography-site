@@ -5,7 +5,7 @@ import React from 'react';
 // import { useNavigate } from 'react-router-dom';
 // import StyledEngineProvider from '@mui/material/StyledEngineProvider';
 // import Button from '@mui/material/Button';
-import Header from './Header';
+// import Header from './Header';
 
 const itemData = [
   {
@@ -63,7 +63,7 @@ function PhotographyPage() {
   // const navigate = useNavigate();
   return (
     <div className="PhotographyPage">
-      <Header />
+      {/* <Header /> */}
       <Box sx={{
         width: 'fit', height: 'fit', display: 'flex', marginLeft: '5%', marginRight: '5%', justifyContent: 'center',
       }}

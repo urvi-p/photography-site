@@ -1,23 +1,36 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import StyledEngineProvider from '@mui/material/StyledEngineProvider';
-import Button from '@mui/material/Button';
+import EmailIcon from '@mui/icons-material/Email';
+import { Fab } from '@mui/material';
+import { Outlet } from 'react-router-dom';
+import Header from './Header';
+// import { useNavigate } from 'react-router-dom';
+// import StyledEngineProvider from '@mui/material/StyledEngineProvider';
+// import Button from '@mui/material/Button';
 import './LandingPage.css';
 
 function LandingPage() {
   // navigate to portfolio page
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate('/photography');
-  };
+  // const handleClick = () => {
+  //   navigate('/photography');
+  // };
 
   return (
     <div className="LandingPage">
-      <StyledEngineProvider injectFirst>
+      <Header />
+      <Outlet />
+      <Fab
+        style={{
+          color: '#FFFFF3', backgroundColor: '#E78898', position: 'fixed', right: 10, bottom: 10,
+        }}
+      >
+        <EmailIcon />
+      </Fab>
+      {/* <StyledEngineProvider injectFirst>
         <h1>Name of Website</h1>
         <Button variant="text" disableRipple onClick={handleClick}>Quote/Catchphrase</Button>
-      </StyledEngineProvider>
+      </StyledEngineProvider> */}
     </div>
   );
 }
