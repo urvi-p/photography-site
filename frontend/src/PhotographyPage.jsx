@@ -65,14 +65,14 @@ function PhotographyPage() {
     <div className="PhotographyPage">
       <Header />
       <Box sx={{
-        width: 'fit', height: 'fit', display: 'flex', marginLeft: '5rem', marginRight: '5rem',
+        width: 'fit', height: 'fit', display: 'flex', marginLeft: '5%', marginRight: '5%', justifyContent: 'center',
       }}
       >
         <Masonry
           columns={{
             xs: 1, sm: 2, md: 3, lg: 4, xl: 5,
           }}
-          spacing={{ xs: 1, sm: 2 }}
+          spacing={2}
         >
           {itemData.map((item) => (
             <ImageListItem key={item.img}>

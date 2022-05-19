@@ -15,11 +15,11 @@ export const MenuData = [
     id: 'menu_about',
     link: '/about',
   },
-  {
-    title: 'Contact',
-    id: 'menu_contact',
-    link: '/contact',
-  },
+  // {
+  //   title: 'Contact',
+  //   id: 'menu_contact',
+  //   link: '/contact',
+  // },
 ];
 
 export default MenuData;

@@ -15,7 +15,34 @@
   background-size: calc(100% - 1em) 4px, 0;
   background-color: transparent;
 }
-
+/* 
 .MuiButton-root:active {
   background-color: #005E5D;
+} */
+.splitScreen{
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+}
+
+.aboutTextDiv {
+  width: 50%;
+  align-self: center;
+}
+
+.aboutPictureDiv {
+  width: 50%;
+}
+
+.aboutText {
+  width: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aboutPicture {
+  display: block;
+  width: 90%;
+  margin-right: auto;
 }
