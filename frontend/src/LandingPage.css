@@ -1,0 +1,21 @@
+.MuiButton-root {
+  border-radius: 0px;
+  color: #000;
+  background-color: transparent;
+
+  /* Underline on hover*/
+  background-image: linear-gradient(#000, #000);
+  background-size: 0 4px, auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all .2s ease-out;
+}
+
+.MuiButton-root:hover {
+  background-size: calc(100% - 1em) 4px, 0;
+  background-color: transparent;
+}
+
+.MuiButton-root:active {
+  background-color: #005E5D;
+}
