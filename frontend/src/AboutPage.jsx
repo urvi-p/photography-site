@@ -3,7 +3,7 @@ import React from 'react';
 // import StyledEngineProvider from '@mui/material/StyledEngineProvider';
 // import Button from '@mui/material/Button';
 // import Header from './Header';
-import './LandingPage.css';
+import './Styles.css';
 
 function AboutPage() {
   // navigate to portfolio page

@@ -10,16 +10,17 @@ function Header() {
     navigate(link);
   };
   return (
-    <div className="Header">
+    <div className="header">
       <StyledEngineProvider injectFirst>
         <h1>Name of Website</h1>
-        <div>
+        <div className="menuButtons">
           {MenuData.map((val) => (
             <Button
+              className="individualMenuItem"
               variant="text"
               disableRipple
               id={val.id}
-              style={{ backgroundColor: window.location.pathname.endsWith(val.link) ? 'blue' : '' }}
+              style={{ backgroundColor: window.location.pathname.endsWith(val.link) ? '#201E50' : '' }}
               aria-hidden="true"
               onClick={() => {
                 if (!window.location.pathname.endsWith(val.link)) {

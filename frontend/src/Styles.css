@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+
+* {
+  font-family: 'Montserrat';
+  color:#FFFFF3;
+}
+.MuiButton-root {
+  border-radius: 0px;
+  color: #FFFFF3;
+  background-color: transparent;
+
+  /* Underline on hover*/
+  background-image: linear-gradient(#201E50, #201E50);
+  background-size: 0 4px, auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all .2s ease-out;
+}
+
+.MuiButton-root:hover {
+  background-size: calc(100%) 4px, 0;
+  background-color: transparent;
+}
+/* 
+.MuiButton-root:active {
+  background-color: #005E5D;
+} */
+.splitScreen{
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+}
+
+.aboutTextDiv {
+  width: 50%;
+  align-self: center;
+}
+
+.aboutPictureDiv {
+  width: 50%;
+}
+
+.aboutText {
+  width: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aboutPicture {
+  display: block;
+  width: 90%;
+  margin-right: auto;
+}
+
+.MuiCardMedia-root {
+  /* display: block;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-background-position: center;
+  background-position: center; */
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.header {
+  display: grid;
+  /* justify-content: center; */
+  justify-items: center;
+  background-color: #686E8D;
+  margin-bottom: 5rem;
+}
+
+.menuButtons {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  width: 100%;
+  justify-items: space-around;
+}
+
+.individualMenuItem {
+  width: 100%;
+  white-space: nowrap;
+}

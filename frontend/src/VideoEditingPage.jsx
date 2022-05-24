@@ -4,8 +4,13 @@ import React from 'react';
 // import StyledEngineProvider from '@mui/material/StyledEngineProvider';
 // import Button from '@mui/material/Button';
 // import Header from './Header';
+import './Styles.css';
 
 const itemData = [
+  {
+    video: 'https://drive.google.com/file/d/1VVLYif4Px_NvstxGKiYZDJHqoXPP_V_9/preview',
+    title: 'Grad Vlog',
+  },
   {
     video: 'https://www.youtube.com/embed/1mpO2So02hc',
     title: 'We (not me) Nearly Died Doing This Challenge...',
@@ -92,16 +97,13 @@ function VideoEditingPage() {
         {itemData.map((item) => (
           <Card
             key={item.video}
-            sx={{
-              aspectRatio: '16/9',
-            }}
           >
             <CardMedia
               // component="video"
               component="iframe"
               src={item.video}
               alt={item.title}
-              // loading="lazy"
+            // loading="lazy"
             />
           </Card>
         ))}
