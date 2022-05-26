@@ -1,6 +1,6 @@
 import React from 'react';
 import EmailIcon from '@mui/icons-material/Email';
-import { Fab } from '@mui/material';
+import { CssBaseline, Fab } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 // import { useNavigate } from 'react-router-dom';
@@ -18,6 +18,7 @@ function LandingPage() {
 
   return (
     <div className="LandingPage">
+      <CssBaseline />
       <Header />
       <Outlet />
       <a href="mailto:test@example.com">

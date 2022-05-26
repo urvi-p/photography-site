@@ -2,11 +2,11 @@
 
 * {
   font-family: 'Montserrat';
-  color:#FFFFF3;
+  /* color:#FFFFF3; */
 }
 .MuiButton-root {
   border-radius: 0px;
-  color: #FFFFF3;
+  color: #FFFFFF;
   background-color: transparent;
 
   /* Underline on hover*/
@@ -65,22 +65,36 @@
 }
 
 .header {
-  display: grid;
-  /* justify-content: center; */
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #686E8D;
   margin-bottom: 5rem;
+  height: 100vh;
+  transition: height 1s;
 }
 
 .menuButtons {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-around; */
-  width: 100%;
-  justify-items: space-around;
+  /* justify-self: center; */
+  min-width: 30rem;
+  /* justify-items: space-around; */
+  width: 60%
+
 }
 
 .individualMenuItem {
   width: 100%;
   white-space: nowrap;
+}
+
+.LandingPage {
+  height: 100vh;
+}
+
+.header:active {
+  height: 50vh;
+  /* background-color: aqua; */
 }
