@@ -4,6 +4,7 @@
   font-family: 'Montserrat';
   /* color:#FFFFF3; */
 }
+
 .MuiButton-root {
   border-radius: 0px;
   color: #FFFFFF;
@@ -21,11 +22,12 @@
   background-size: calc(100%) 4px, 0;
   background-color: transparent;
 }
+
 /* 
 .MuiButton-root:active {
   background-color: #005E5D;
 } */
-.splitScreen{
+.splitScreen {
   display: flex;
   flex-direction: row;
   height: fit-content;
@@ -65,14 +67,62 @@
 }
 
 .header {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #686E8D;
-  margin-bottom: 5rem;
+  opacity: 0.5;
+  margin-bottom: 3rem;
   height: 100vh;
-  transition: height 1s;
+  transition: height 3s, opacity 3s; */
+  /* position: fixed; */
+
+  position: fixed;
+  /* Sit on top of the page content */
+  display: block;
+  /* Hidden by default */
+  justify-content: center;
+  width: 100vw;
+  /* Full width (cover the whole page) */
+  height: 100vh;
+  margin-bottom: 3rem;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  /* right: 0;
+  bottom: 0; */
+  /* background-color: #686E8D; */
+  background-color: rgba(104, 110, 141, 1);
+  /* opacity: 0.5; */
+  transition: height 3s, background-color 3s;
+  z-index: 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+  position: relative;
+}
+
+.siteName {
+  color: #FFFFFF;
+  font-weight: 100;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .menuButtons {
@@ -81,8 +131,8 @@
   /* justify-self: center; */
   min-width: 30rem;
   /* justify-items: space-around; */
-  width: 60%
-
+  width: 60%;
+  animation: fadeIn 3s linear;
 }
 
 .individualMenuItem {
@@ -94,7 +144,7 @@
   height: 100vh;
 }
 
-.header:active {
-  height: 50vh;
-  /* background-color: aqua; */
+.outletDiv {
+  margin-top: 11rem;
+  height: max-content;
 }

@@ -20,11 +20,17 @@ function LandingPage() {
     <div className="LandingPage">
       <CssBaseline />
       <Header />
-      <Outlet />
+      <div className="outletDiv">
+        <Outlet />
+      </div>
       <a href="mailto:test@example.com">
         <Fab
           style={{
-            color: '#FFFFF3', backgroundColor: '#E78898', position: 'fixed', right: 10, bottom: 10,
+            color: '#FFFFF3',
+            backgroundColor: '#E78898',
+            position: 'fixed',
+            right: 10,
+            bottom: 10,
           }}
         >
           <EmailIcon />
@@ -33,7 +39,7 @@ function LandingPage() {
       {/* <StyledEngineProvider injectFirst>
         <h1>Name of Website</h1>
         <Button variant="text" disableRipple onClick={handleClick}>Quote/Catchphrase</Button>
-      </StyledEngineProvider> */}
+        </StyledEngineProvider> */}
     </div>
   );
 }
