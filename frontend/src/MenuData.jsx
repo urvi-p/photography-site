@@ -1,15 +1,20 @@
 // All tabs for menu
 export const MenuData = [
   {
-    title: 'Photography',
-    id: 'menu_photography',
-    link: '/photography',
+    title: 'Landscape Photography',
+    id: 'menu_landscape_photography',
+    link: '/landscape-photography',
   },
   {
-    title: 'Video Editing',
-    id: 'menu_videoediting',
-    link: '/videoediting',
+    title: 'Portrait Photography',
+    id: 'menu_portrait_photography',
+    link: '/portrait-photography',
   },
+  // {
+  //   title: 'Video Editing',
+  //   id: 'menu_videoediting',
+  //   link: '/videoediting',
+  // },
   {
     title: 'About',
     id: 'menu_about',

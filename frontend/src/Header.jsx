@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import StyledEngineProvider from '@mui/material/StyledEngineProvider';
 import Button from '@mui/material/Button';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { MenuData } from './MenuData';
 import './Styles.css';
-import ScrollBackground from './ScrollBackground';
+// import PhotographyPage from './PhotographyPage';
+// import ScrollBackground from './ScrollBackground';
 
 function Header() {
   // const [transition, setTransition] = useState('100vh');
@@ -20,6 +21,16 @@ function Header() {
     window.scrollTo(0, 0);
     navigate('/photography');
   };
+
+  // const getBackgroundColor = () => {
+  //   if (window.location.pathname === '/') {
+  //     return '100vh';
+  //   }
+  //   if (window.location.pathname === '/photography') {
+  //     return '6rem';
+  //   }
+  //   return '8rem';
+  // };
 
   // const divRef = useRef(null);
   useEffect(() => {
@@ -39,7 +50,11 @@ function Header() {
 
   // if at base url, display single button, else display the menu bar
   let menu;
-  let backgroundGallery;
+  let headerHeight;
+  let topSpacing;
+  let transformation;
+  let displayType;
+  // let backgroundGallery;
   // const headerTransition = document.getElementById('header');
   if (window.location.pathname === '/') {
     menu = (
@@ -49,10 +64,21 @@ function Header() {
         disableRipple
         onClick={() => handleClick()}
       >
-        Quote/Catchphrase
+        {/* Quote/Catchphrase */}
+        Subheading
       </Button>
     );
-    backgroundGallery = <ScrollBackground />;
+    headerHeight = '100vh';
+    topSpacing = '50%';
+    transformation = 'translateY(-50%)';
+    displayType = 'flex';
+    // backgroundGallery = <ScrollBackground />;
+  } else if (window.location.pathname === '/photography') {
+    menu = <div />;
+    headerHeight = '5.7rem';
+    topSpacing = '';
+    transformation = '';
+    displayType = 'flex';
   } else {
     // headerTransition.style.backgroundColor = 'blue';
     // document.getElementsByClassName('header').classList.toggle('active');
@@ -79,7 +105,11 @@ function Header() {
         ))}
       </div>
     );
-    backgroundGallery = '';
+    headerHeight = '8rem';
+    topSpacing = '';
+    transformation = '';
+    displayType = 'block';
+    // backgroundGallery = '';
   }
 
   // function fullWindow() {
@@ -93,24 +123,34 @@ function Header() {
   return (
     <div
       className="headerMainDiv"
-      // don't put style here, it affects the transition to slide up the photography page
-      // style={{
-      //   height: window.location.pathname === '/' ? '100vh' : '8rem',
-      // }}
+    // don't put style here, it affects the transition to slide up the photography page
+    // style={{
+    //   height: window.location.pathname === '/' ? '100vh' : '8rem',
+    // }}
     >
       <div
         className="header"
         id="overlay"
         style={{
-          height: window.location.pathname === '/' ? '100vh' : '8rem',
+          height: headerHeight,
+          display: displayType,
           // opacity: window.location.pathname === '/' ? '0.5' : '1',
           backgroundColor: window.location.pathname === '/' ? 'rgba(104, 110, 141, 0.5)' : 'rgba(104, 110, 141, 1)',
         }}
       >
-        <div className="headerContent">
+        <div
+          className="headerContent"
+          style={{
+            top: topSpacing,
+            transform: transformation,
+          }}
+        >
           <StyledEngineProvider injectFirst>
 
-            <h1 className="siteName ">Name of Website</h1>
+            <h1 className="title">
+              {/* <NavLink to="/" className="siteName">Captured in Firelight</NavLink> */}
+              <NavLink to="/" className="siteName">Name of Site</NavLink>
+            </h1>
             {menu}
             {/* {window.location.origin
           ? <Button variant="text" disableRipple onClick={handleClick}>Quote/Catchphrase</Button>
@@ -154,7 +194,8 @@ function Header() {
       >
         {/* <p>insert scrolling photo gallery here</p> */}
         {/* <ScrollBackground /> */}
-        {backgroundGallery}
+        {/* {backgroundGallery} */}
+        {/* <PhotographyPage /> */}
       </div>
     </div>
   );

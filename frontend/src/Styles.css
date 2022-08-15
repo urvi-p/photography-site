@@ -80,10 +80,11 @@
 
   position: fixed;
   /* Sit on top of the page content */
-  display: block;
+  /* display: block; */
   /* Hidden by default */
   justify-content: center;
   width: 100vw;
+  /* min-height: auto; */
   /* Full width (cover the whole page) */
   height: 100vh;
   margin-bottom: 3rem;
@@ -95,7 +96,7 @@
   /* background-color: #686E8D; */
   background-color: rgba(104, 110, 141, 1);
   /* opacity: 0.5; */
-  transition: height 3s, background-color 3s;
+  transition: height 2s, background-color 3s;
   z-index: 2;
   /* Specify a stack order in case you're using a different order for other elements */
 }
@@ -105,14 +106,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  top: 50%;
-  transform: translateY(-50%);
+  /* top: 50%;
+  transform: translateY(-50%); */
   position: relative;
 }
 
 .siteName {
   color: #FFFFFF;
   font-weight: 100;
+  text-decoration: none;
 }
 
 @keyframes fadeIn {
@@ -125,6 +127,18 @@
   }
 }
 
+@keyframes visibilityChange {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 0;
+  }
+}
+
 .menuButtons {
   display: flex;
   flex-direction: row;
@@ -132,19 +146,23 @@
   min-width: 30rem;
   /* justify-items: space-around; */
   width: 60%;
+  animation: fadeIn 3s linear 1s, visibilityChange 1s;
+}
+
+.quoteButton {
   animation: fadeIn 3s linear;
 }
 
 .individualMenuItem {
   width: 100%;
-  white-space: nowrap;
+
 }
 
 .LandingPage {
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .outletDiv {
-  margin-top: 11rem;
+  margin-top: 10rem;
   height: max-content;
 }
