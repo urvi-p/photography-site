@@ -87,7 +87,7 @@
   /* min-height: auto; */
   /* Full width (cover the whole page) */
   height: 100vh;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
   /* Full height (cover the whole page) */
   top: 0;
   left: 0;
@@ -165,4 +165,56 @@
 .outletDiv {
   margin-top: 10rem;
   height: max-content;
+}
+
+.Photography {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  height:100%;
+}
+
+.photoTypes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  gap: 0.3%;
+  /* justify-items: sp; */
+  align-items: stretch;
+  margin-top: -2.5rem;
+}
+
+.type {
+  width: 45%;
+  min-width: 30rem;
+  margin: 1rem;
+  margin-top: 1rem;
+}
+
+.aboutDiv {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  /* align-self:; */
+}
+
+.aboutButton {
+  font-size: x-large;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgba(104, 110, 141, 1);
+
+  /* Underline on hover*/
+  background-image: linear-gradient(#201E50, #201E50);
+  background-size: 0 4px, auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all .2s ease-out;
+}
+
+.aboutButton:hover {
+  background-size: calc(100%) 4px, 0;
 }
