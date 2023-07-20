@@ -6,22 +6,22 @@ import LandingPage from './LandingPage';
 import PhotographyPage from './PhotographyPage';
 import PortraitPhotography from './PortraitPhotography';
 import LandscapePhotography from './LandscapePhotography';
-import GetImagesFromStorage from './GetImagesFromStorage';
-// import { PhotoData as photoData } from './PhotoData';
+// import GetImagesFromStorage from './GetImagesFromStorage';
+import { PhotoData as photoData } from './PhotoData';
 
 function App() {
   const [landscapePhotos, setLandscapePhotos] = useState([]);
   const [portraitPhotos, setPortraitPhotos] = useState([]);
   async function getPhotos() {
-    const landscapePhotoData = await GetImagesFromStorage('files/landscape');
-    console.log('landscape retreived:', landscapePhotoData);
-    setLandscapePhotos(landscapePhotoData);
-    // setLandscapePhotos(photoData);
+    // const landscapePhotoData = await GetImagesFromStorage('files/landscape');
+    // console.log('landscape retreived:', landscapePhotoData);
+    // setLandscapePhotos(landscapePhotoData);
+    setLandscapePhotos(photoData);
 
-    const portraitPhotoData = await GetImagesFromStorage('files/portrait');
-    console.log('portrait retreived:', portraitPhotoData);
-    setPortraitPhotos(portraitPhotoData);
-    // setPortraitPhotos(photoData);
+    // const portraitPhotoData = await GetImagesFromStorage('files/portrait');
+    // console.log('portrait retreived:', portraitPhotoData);
+    // setPortraitPhotos(portraitPhotoData);
+    setPortraitPhotos(photoData);
   }
 
   useEffect(() => {
