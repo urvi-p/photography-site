@@ -42,7 +42,7 @@ ABOUT PAGE
 }
 
 .aboutText {
-  width: 70%;
+  width: 80%;
   text-align: left;
   margin-left: auto;
   margin-right: auto;
@@ -81,6 +81,7 @@ ABOUT PAGE
   display: block;
   width: auto;
   margin-right: auto;
+  margin-left: auto;
   max-height: 100%;
   max-width: 100%;
 }
@@ -135,6 +136,9 @@ HEADER
   font-size: medium;
 }
 
+.arrowIcon {
+  margin-right: -0.5rem;
+}
 .individualMenuItem {
   width: 100%;
 

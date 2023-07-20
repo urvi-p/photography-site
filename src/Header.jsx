@@ -2,6 +2,7 @@
 import React from 'react';
 import StyledEngineProvider from '@mui/material/StyledEngineProvider';
 import Button from '@mui/material/Button';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { MenuData } from './MenuData';
 import './Styles.css';
@@ -40,6 +41,7 @@ function Header() {
         onClick={() => handleClick()}
       >
         Look through the lens
+        <NavigateNextIcon className="arrowIcon" />
       </Button>
     );
     headerHeight = '100vh';
