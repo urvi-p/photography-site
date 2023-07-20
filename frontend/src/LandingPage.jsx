@@ -3,19 +3,9 @@ import EmailIcon from '@mui/icons-material/Email';
 import { CssBaseline, Fab } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
-// import { useNavigate } from 'react-router-dom';
-// import StyledEngineProvider from '@mui/material/StyledEngineProvider';
-// import Button from '@mui/material/Button';
 import './Styles.css';
 
 function LandingPage() {
-  // navigate to portfolio page
-  // const navigate = useNavigate();
-
-  // const handleClick = () => {
-  //   navigate('/photography');
-  // };
-
   return (
     <div className="LandingPage">
       <CssBaseline />
@@ -23,7 +13,7 @@ function LandingPage() {
       <div className="outletDiv">
         <Outlet />
       </div>
-      <a href="mailto:test@example.com">
+      <a href="mailto:capturedinlight23@gmail.com">
         <Fab
           style={{
             color: '#FFFFF3',
@@ -36,10 +26,6 @@ function LandingPage() {
           <EmailIcon />
         </Fab>
       </a>
-      {/* <StyledEngineProvider injectFirst>
-        <h1>Name of Website</h1>
-        <Button variant="text" disableRipple onClick={handleClick}>Quote/Catchphrase</Button>
-        </StyledEngineProvider> */}
     </div>
   );
 }

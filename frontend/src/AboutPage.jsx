@@ -1,28 +1,35 @@
 import React from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import StyledEngineProvider from '@mui/material/StyledEngineProvider';
-// import Button from '@mui/material/Button';
-// import Header from './Header';
 import './Styles.css';
+import photo from './images/self-outline-background.jpg';
+// image from: https://static.vecteezy.com/system/resources/previews/021/194/434/original/woman-holding-camera-line-drawing-vector.jpg
 
 function AboutPage() {
-  // navigate to portfolio page
-  // const navigate = useNavigate();
   return (
     <div className="AboutPage">
-      {/* <Header /> */}
-      <div className="splitScreen">
-        <div className="aboutTextDiv">
-          <h2 className="aboutText">About me / About website section goes here</h2>
-        </div>
-        <div className="aboutPictureDiv">
-          <img
-            className="aboutPicture"
-            width={100}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxtf9HEjFR0YBKzXWO3GV-LraPyv-iyNf_bAqW4TWny_RkzPLqiMLGDdCDhZ1C-XDPfgg&usqp=CAU"
-            alt="Website owner"
-          />
-        </div>
+      <div className="aboutTextDiv">
+        <h1 className="aboutText">
+          Hi
+          <span className="wave">👋🏼</span>
+        </h1>
+        <h2 className="aboutText">
+          I’m Urvi, a software developer from Canada.
+          <br />
+          I love to take photos in my spare time and
+          this website is a collection of some of my favorites!
+          <br />
+          <br />
+          If you’d like to get in touch, send me an email at
+          {' '}
+          <a href="mailto:capturedinlight23@gmail.com">capturedinlight23@gmail.com</a>
+          .
+        </h2>
+      </div>
+      <div className="aboutPictureDiv">
+        <img
+          className="aboutPicture"
+          src={photo}
+          alt="Website owner"
+        />
       </div>
     </div>
   );

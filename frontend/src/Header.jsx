@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+/* eslint-disable no-console */
+import React from 'react';
 import StyledEngineProvider from '@mui/material/StyledEngineProvider';
 import Button from '@mui/material/Button';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { MenuData } from './MenuData';
 import './Styles.css';
-// import PhotographyPage from './PhotographyPage';
-// import ScrollBackground from './ScrollBackground';
+import ScrollBackground from './ScrollBackground';
+import title from './images/CapturedInLight.png';
 
 function Header() {
-  // const [transition, setTransition] = useState('100vh');
   const navigate = useNavigate();
   const navigateToLink = (link) => {
     navigate(link);
@@ -16,37 +16,10 @@ function Header() {
 
   // navigate to photography page
   const handleClick = () => {
-    // /* eslint-disable no-console */
     // console.log('Clicked');
     window.scrollTo(0, 0);
     navigate('/photography');
   };
-
-  // const getBackgroundColor = () => {
-  //   if (window.location.pathname === '/') {
-  //     return '100vh';
-  //   }
-  //   if (window.location.pathname === '/photography') {
-  //     return '6rem';
-  //   }
-  //   return '8rem';
-  // };
-
-  // const divRef = useRef(null);
-  useEffect(() => {
-    // window.scrollBy(0, 1);
-    // scrolldelay = setTimeout(pageScroll, 10);
-    // divRef.current.scrollIntoView({ behavior: 'smooth' });
-
-    /* eslint-disable global-require */
-    // const Scroll = require('react-scroll');
-    // const scroll = Scroll.animateScroll;
-    // scroll.scrollToBottom({ duration: n, smooth: 'linear' });
-
-    // const Scroll = require('react-scroll');
-    // // const Events = Scroll.Events;
-    // Scroll.Events.scrollEvent.register('begin');
-  });
 
   // if at base url, display single button, else display the menu bar
   let menu;
@@ -54,9 +27,11 @@ function Header() {
   let topSpacing;
   let transformation;
   let displayType;
-  // let backgroundGallery;
-  // const headerTransition = document.getElementById('header');
+  let backgroundGallery;
+  let titleHeight;
+
   if (window.location.pathname === '/') {
+    // if on landing page
     menu = (
       <Button
         className="quoteButton"
@@ -64,25 +39,25 @@ function Header() {
         disableRipple
         onClick={() => handleClick()}
       >
-        {/* Quote/Catchphrase */}
-        Subheading
+        Look through the lens
       </Button>
     );
     headerHeight = '100vh';
     topSpacing = '50%';
     transformation = 'translateY(-50%)';
     displayType = 'flex';
-    // backgroundGallery = <ScrollBackground />;
+    backgroundGallery = <ScrollBackground />;
+    titleHeight = '6rem';
   } else if (window.location.pathname === '/photography') {
+    // if on /photography page
     menu = <div />;
     headerHeight = '5.7rem';
     topSpacing = '';
     transformation = '';
     displayType = 'flex';
+    titleHeight = '4.2rem';
   } else {
-    // headerTransition.style.backgroundColor = 'blue';
-    // document.getElementsByClassName('header').classList.toggle('active');
-    // setTransition('50vh');
+    // for any other page
     menu = (
       <div className="menuButtons">
         {MenuData.map((val) => (
@@ -109,24 +84,14 @@ function Header() {
     topSpacing = '';
     transformation = '';
     displayType = 'block';
-    // backgroundGallery = '';
+    backgroundGallery = '';
+    titleHeight = '4.2rem';
   }
-
-  // function fullWindow() {
-  //   document.getElementById('header').style.height = '100vh'
-  // }
-
-  // function onlyHeading() {
-  //   document.getElementById('header').style.height = '8rem';
-  // }
 
   return (
     <div
       className="headerMainDiv"
     // don't put style here, it affects the transition to slide up the photography page
-    // style={{
-    //   height: window.location.pathname === '/' ? '100vh' : '8rem',
-    // }}
     >
       <div
         className="header"
@@ -134,8 +99,7 @@ function Header() {
         style={{
           height: headerHeight,
           display: displayType,
-          // opacity: window.location.pathname === '/' ? '0.5' : '1',
-          backgroundColor: window.location.pathname === '/' ? 'rgba(104, 110, 141, 0.5)' : 'rgba(104, 110, 141, 1)',
+          backgroundColor: window.location.pathname === '/' ? 'rgba(104, 110, 141, 0.6)' : 'rgba(104, 110, 141, 1)',
         }}
       >
         <div
@@ -146,56 +110,20 @@ function Header() {
           }}
         >
           <StyledEngineProvider injectFirst>
-
-            <h1 className="title">
-              {/* <NavLink to="/" className="siteName">Captured in Firelight</NavLink> */}
-              <NavLink to="/" className="siteName">Name of Site</NavLink>
-            </h1>
-            {menu}
-            {/* {window.location.origin
-          ? <Button variant="text" disableRipple onClick={handleClick}>Quote/Catchphrase</Button>
-          : (
-            <div className="menuButtons">
-              {MenuData.map((val) => (
-                <Button
-                  className="individualMenuItem"
-                  variant="text"
-                  disableRipple
-                  id={val.id}
-                  style=
-                  {{ backgroundColor: window.location.pathname.endsWith(val.link) ? '#201E50' : ''
-                }}
-                  aria-hidden="true"
-                  onClick={() => {
-                    if (!window.location.pathname.endsWith(val.link)) {
-                      navigateToLink(val.link);
-                    }
-                  }}
-                >
-                  <div id="title">{val.title}</div>
-                </Button>
-              ))}
+            <div className="title">
+              <NavLink to="/">
+                <img className="siteName" style={{ height: titleHeight }} src={title} alt="Captured in Firelight" />
+              </NavLink>
             </div>
-          )} */}
-
+            {menu}
           </StyledEngineProvider>
         </div>
       </div>
       <div style={{
-        // height: window.location.pathname === '/' ? '100vh' : '8rem',
-        // width: '100vw',
-        // justifyContent: 'center',
-        // alignItems: 'center',
         display: window.location.pathname === '/' ? '' : 'none',
-        // display: 'flex',
-        // visibility: window.location.pathname === '/' ? 'visible' : 'hidden',
-        // transition: 'height 3s',
       }}
       >
-        {/* <p>insert scrolling photo gallery here</p> */}
-        {/* <ScrollBackground /> */}
-        {/* {backgroundGallery} */}
-        {/* <PhotographyPage /> */}
+        {backgroundGallery}
       </div>
     </div>
   );

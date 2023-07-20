@@ -1,42 +1,41 @@
-import React from 'react';
+/* eslint-disable no-console */
+import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import AboutPage from './AboutPage';
-// import AddImageInfo from './AddImageInfo';
 import LandingPage from './LandingPage';
 import PhotographyPage from './PhotographyPage';
-import PhotoLayout from './PhotoLayout';
-// import VideoEditingPage from './VideoEditingPage';
-// import { storage } from './firebase'
-// import { ref, getDownloadURL } from "firebase/storage"
+import PortraitPhotography from './PortraitPhotography';
+import LandscapePhotography from './LandscapePhotography';
+import GetImagesFromStorage from './GetImagesFromStorage';
+// import { PhotoData as photoData } from './PhotoData';
 
 function App() {
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   const file = e.target[0]?.files[0]
-  //   if (!file) return null;
-  //   const storageRef = ref(storage, `files/${file.name}`)
-  //   uploadBytes(storageRef, file)
-  //     .then((snapshot) => {
-  //       e.target[0].value = ''
-  //       getDownloadURL(snapshot.ref).then((downloadURL) => {
-  //         console.log(downloadURL)
-  //       })
-  //     })
-  // }
-  // useEffect(() => {
-  //   /* eslint-disable no-console */
-  //   console.log('Here', AddImageInfo());
-  // }, []);
+  const [landscapePhotos, setLandscapePhotos] = useState([]);
+  const [portraitPhotos, setPortraitPhotos] = useState([]);
+  async function getPhotos() {
+    const landscapePhotoData = await GetImagesFromStorage('files/landscape');
+    console.log('landscape retreived:', landscapePhotoData);
+    setLandscapePhotos(landscapePhotoData);
+    // setLandscapePhotos(photoData);
+
+    const portraitPhotoData = await GetImagesFromStorage('files/portrait');
+    console.log('portrait retreived:', portraitPhotoData);
+    setPortraitPhotos(portraitPhotoData);
+    // setPortraitPhotos(photoData);
+  }
+
+  useEffect(() => {
+    getPhotos()
+      .catch(console.error);
+  }, []);
 
   return (
     <div className="App">
-      {/* <form className='app__form' name='upload_file' onSubmit={handleSubmit} /> */}
       <Routes>
         <Route path="/" element={<LandingPage />}>
           <Route path="/photography" element={<PhotographyPage />} />
-          <Route path="landscape-photography" element={<PhotoLayout />} />
-          <Route path="portrait-photography" element={<PhotoLayout />} />
-          {/* <Route path="videoediting" element={<VideoEditingPage />} /> */}
+          <Route path="landscape-photography" element={<LandscapePhotography photoData={landscapePhotos} />} />
+          <Route path="portrait-photography" element={<PortraitPhotography photoData={portraitPhotos} />} />
           <Route path="about" element={<AboutPage />} />
         </Route>
       </Routes>
