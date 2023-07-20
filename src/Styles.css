@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+
+* {
+  font-family: 'Montserrat';
+  font-weight: bold;
+}
+
+a {
+  color:#403e84;
+}
+
+.MuiButton-root {
+  border-radius: 0px;
+  color: #FFFFFF;
+  background-color: transparent;
+
+  /* Underline on hover*/
+  background-image: linear-gradient(#201E50, #201E50);
+  background-size: 0 4px, auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all .2s ease-out;
+}
+
+.MuiButton-root:hover {
+  background-size: calc(100%) 4px, 0;
+  background-color: transparent;
+}
+
+/* 
+ABOUT PAGE
+*/
+.AboutPage {
+  display: flex;
+  flex-direction: row;
+  height: 75vh;
+}
+
+.aboutTextDiv {
+  width: 50%;
+  align-self: center;
+}
+
+.aboutText {
+  width: 70%;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Source for wave animation: https://codepen.io/jakejarvis/pen/pBZWZw */
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+  font-size: 2em
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+.aboutPictureDiv {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutPicture {
+  display: block;
+  width: auto;
+  margin-right: auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* 
+HEADER 
+*/
+.header {
+  position:fixed; /* Sit on top of the page content */
+  justify-content: center;
+  width: 100vw; /* Full width (cover the whole page) */
+  height: 100vh; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  background-color: rgba(104, 110, 141, 1);
+  transition: height 3s; /*This adds transition to background colour --> 1s, background-color 1s 0s; */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.1rem;
+}
+
+.siteName {
+  color: #FFFFFF;
+  font-weight: 1000;
+  text-decoration: none;
+  transition: height 2s;
+}
+
+.menuButtons {
+  display: flex;
+  flex-direction: row;
+  min-width: 50rem;
+  animation: fadeIn 2s linear 1s, visibilityChange 1s;
+  white-space:nowrap;
+}
+
+.quoteButton {
+  animation: fadeIn 2s linear;
+  font-size: medium;
+}
+
+.individualMenuItem {
+  width: 100%;
+
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes visibilityChange {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 0;
+  }
+}
+
+/*
+LANDING PAGE & BACKGROUND INFINITE SCROLL
+*/
+.LandingPage {
+  height: 100%;
+}
+
+.infiniteScroll {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  margin-top: -10rem;
+}
+.infinite-scroll-component {
+  animation: scroll 10s linear 1s infinite;
+}
+
+@keyframes scroll {
+  from {
+    top: 0%;
+  }
+  to {
+    top: -100%;
+  }
+}
+
+/* 
+OUTLET 
+*/
+.outletDiv {
+  margin-top: 10rem;
+}
+
+/* 
+PHOTOGRAPHY PAGE 
+*/
+.Photography {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photoTypes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  gap: 0.3%;
+  align-items: stretch;
+  margin-top: -2.5rem;
+  height: 100%;
+}
+
+.type {
+  width: 45%;
+  min-width: 30rem;
+  margin: 1rem;
+  max-height: 65vh;
+  min-height: 50vh;
+}
+
+.aboutDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.aboutButton {
+  font-size: x-large;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgba(104, 110, 141, 1);
+
+  /* Underline on hover*/
+  background-image: linear-gradient(#201E50, #201E50);
+  background-size: 0 4px, auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all .2s ease-out;
+}
+
+.aboutButton:hover {
+  background-size: calc(100%) 4px, 0;
+}
+
+/* 
+PHOTO LAYOUT DIALOG BOX 
+*/
+.dialogImage {
+  max-height: 70vh;
+  width: 100%;
+}
