@@ -81,6 +81,7 @@ function ScrollBackground() {
         </divß> */}
       {/* <Element name="myScrollToElement" /> */}
       {/* </InfiniteScroll> */}
+      <p className="copyright">Copyright &copy; 2023 Urvi Patel</p>
     </div>
   );
 }
