@@ -6,31 +6,34 @@ import photo from './images/self-outline-background.jpg';
 function AboutPage() {
   return (
     <div className="AboutPage">
-      <div className="aboutTextDiv">
-        <h1 className="aboutText">
-          Hi
-          <span className="wave">👋🏼</span>
-        </h1>
-        <h2 className="aboutText">
-          I’m Urvi, a software developer from Canada.
-          <br />
-          I love to take photos in my spare time and
-          this website is a collection of some of my favorites!
-          <br />
-          <br />
-          If you’d like to get in touch, send me an email at
-          {' '}
-          <a href="mailto:capturedinlight23@gmail.com">capturedinlight23@gmail.com</a>
-          .
-        </h2>
+      <div className="AboutContent">
+        <div className="aboutTextDiv">
+          <h1 className="aboutText">
+            Hi
+            <span className="wave">👋🏼</span>
+          </h1>
+          <h2 className="aboutText">
+            I’m Urvi, a software developer from Canada.
+            <br />
+            I love to take photos in my spare time and
+            this website is a collection of some of my favorites!
+            <br />
+            <br />
+            If you’d like to get in touch, send me an email at
+            {' '}
+            <a href="mailto:capturedinlight23@gmail.com">capturedinlight23@gmail.com</a>
+            .
+          </h2>
+        </div>
+        <div className="aboutPictureDiv">
+          <img
+            className="aboutPicture"
+            src={photo}
+            alt="Website owner"
+          />
+        </div>
       </div>
-      <div className="aboutPictureDiv">
-        <img
-          className="aboutPicture"
-          src={photo}
-          alt="Website owner"
-        />
-      </div>
+      <p className="copyright">Copyright &copy; 2023 Urvi Patel</p>
     </div>
   );
 }

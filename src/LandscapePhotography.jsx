@@ -9,6 +9,7 @@ function LandscapePhotography(props) {
   return (
     <div>
       <PhotoLayout photoData={photoData} path="landscape" />
+      <p className="copyright">Copyright &copy; 2023 Urvi Patel</p>
     </div>
   );
 }

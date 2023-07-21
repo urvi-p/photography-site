@@ -9,6 +9,7 @@ function PortraitPhotography(props) {
   return (
     <div>
       <PhotoLayout photoData={photoData} path="portrait" />
+      <p className="copyright">Copyright &copy; 2023 Urvi Patel</p>
     </div>
   );
 }

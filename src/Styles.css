@@ -27,10 +27,16 @@ a {
   background-color: transparent;
 }
 
+.copyright {
+  text-align: center;
+  bottom: 0px;
+  width: 100%;
+}
+
 /* 
 ABOUT PAGE
 */
-.AboutPage {
+.AboutContent {
   display: flex;
   flex-direction: row;
   height: 75vh;

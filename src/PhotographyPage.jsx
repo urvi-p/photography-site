@@ -55,6 +55,7 @@ function PhotographyPage() {
           </h1>
         </div>
       </StyledEngineProvider>
+      <p className="copyright">Copyright &copy; 2023 Urvi Patel</p>
     </div>
   );
 }
