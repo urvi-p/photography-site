@@ -31,7 +31,7 @@ async function GetImagesFromStorage(storagePath) {
       console.log('Uh-oh, an error occurred!', error);
     });
 
-  console.log('final list', imageList);
+  // console.log('final list', imageList);
   return imageList;
 }
 

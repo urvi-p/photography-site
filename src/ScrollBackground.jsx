@@ -37,7 +37,7 @@ function ScrollBackground() {
     // divRef.current.scrollIntoView({ behavior: 'smooth' });
     // setInterval(scroll, 10000);
     // scroll();
-    console.log(photoData);
+    // console.log(photoData);
   }, []);
 
   return (

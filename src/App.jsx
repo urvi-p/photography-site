@@ -14,12 +14,12 @@ function App() {
   const [portraitPhotos, setPortraitPhotos] = useState([]);
   async function getPhotos() {
     const landscapePhotoData = await GetImagesFromStorage('files/landscape');
-    console.log('landscape retreived:', landscapePhotoData);
+    // console.log('landscape retreived:', landscapePhotoData);
     setLandscapePhotos(landscapePhotoData);
     // setLandscapePhotos(photoData);
 
     const portraitPhotoData = await GetImagesFromStorage('files/portrait');
-    console.log('portrait retreived:', portraitPhotoData);
+    // console.log('portrait retreived:', portraitPhotoData);
     setPortraitPhotos(portraitPhotoData);
     // setPortraitPhotos(photoData);
   }

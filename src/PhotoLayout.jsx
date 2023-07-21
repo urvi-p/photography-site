@@ -28,7 +28,7 @@ function PhotoLayout(props) {
     if (path === 'landscape') {
       const custom = img.metadata.customMetadata;
       setItemClicked({ location: custom.location });
-      console.log(custom.location);
+      // console.log(custom.location);
     } else {
       setItemClicked(emptyItem);
     }
@@ -57,7 +57,7 @@ function PhotoLayout(props) {
   useEffect(() => {
     setTimeout(handleOpenSnackbar, 5000);
     setTimeout(handleCloseSnackbar, 10000);
-    console.log('PhotoData:', photoData);
+    // console.log('PhotoData:', photoData);
   }, []);
 
   return (
